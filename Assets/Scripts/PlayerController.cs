@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public Text countText;
 
     private Rigidbody rb;
+    private int count;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        count = 0;
+        SetCountText();
     }
 
     void FixedUpdate()
@@ -20,9 +25,22 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertival);
 
-        rb.AddForce(movement * 10);
+        rb.AddForce(movement * speed);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Chest")) 
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;
+            SetCountText();
+        }
+    }
+        void SetCountText ()
+    {
+        countText.text = "Treasure Aquired: " + count.ToString();
+    }
 }
 
 
