@@ -9,4 +9,9 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene(MazeGameLevel1);
     }
+
+    public void ExitGaneBtn()
+    {
+        Application.Quit();
+    }
 }
