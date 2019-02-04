@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    public void Level1Btn(string MazeGameLevel1)
+      public void Level1Btn(string MazeGameLevel1)
     {
         SceneManager.LoadScene(MazeGameLevel1);
     }
 
+  
     public void ExitGaneBtn()
     {
         Application.Quit();
     }
-}
+    }
