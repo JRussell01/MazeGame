@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
         if (count >= 7)
         {
             winText.text = "Congratulations You Win!";
-          
         }
     }
 }

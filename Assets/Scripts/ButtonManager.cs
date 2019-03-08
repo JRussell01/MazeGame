@@ -10,9 +10,14 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene(MazeGameLevel1);
     }
 
-  
+    public void Level2Btn(string MazeGameLevel2)
+    {
+        SceneManager.LoadScene(MazeGameLevel2);
+    }
+
     public void ExitGaneBtn()
     {
         Application.Quit();
     }
-    }
+
+ }
