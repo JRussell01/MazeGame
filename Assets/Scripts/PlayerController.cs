@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private int count;
+    public AudioSource Win;
 
     private void Start()
     {
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
         if (count >= 7)
         {
             winText.text = "Congratulations You Win!";
+            Win.Play(); 
         }
     }
 }
